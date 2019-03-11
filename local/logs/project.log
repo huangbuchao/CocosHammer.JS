@@ -1,297 +1,56 @@
-2019-03-11T06:11:15.644Z - normal: Load ~/.CocosCreator/settings.json
-2019-03-11T06:11:15.647Z - normal: checking language setting...
-2019-03-11T06:11:15.647Z - normal: Language: en
-2019-03-11T06:11:16.584Z - success: protocol editor-framework registered
-2019-03-11T06:11:16.584Z - success: protocol app registered
-2019-03-11T06:11:16.584Z - success: protocol theme registered
-2019-03-11T06:11:16.584Z - success: protocol packages registered
-2019-03-11T06:11:16.585Z - success: protocol unpack registerred
-2019-03-11T06:11:16.585Z - success: protocol disable-commonjs registerred
-2019-03-11T06:11:16.752Z - normal: connected!
-2019-03-11T06:11:16.755Z - normal: Check project /Users/huangbuchao/webPrejects/CocosHammer.JS
-2019-03-11T06:11:16.757Z - normal: Initializing Cocos2d
-2019-03-11T06:11:17.017Z - normal: Initializing Asset Database
-2019-03-11T06:11:17.065Z - success: protocol uuid registerred
-2019-03-11T06:11:17.065Z - success: protocol db registerred
-2019-03-11T06:11:17.065Z - success: protocol thumbnail registerred
-2019-03-11T06:11:17.066Z - normal: Loading editor/builtin packages
-2019-03-11T06:11:17.087Z - success: anysdk loaded
-2019-03-11T06:11:17.220Z - success: assets loaded
-2019-03-11T06:11:17.224Z - success: builder loaded
-2019-03-11T06:11:17.226Z - success: cocos-analytics loaded
-2019-03-11T06:11:17.232Z - success: console loaded
-2019-03-11T06:11:17.269Z - success: fb-instant-games loaded
-2019-03-11T06:11:17.274Z - success: hierarchy loaded
-2019-03-11T06:11:17.279Z - success: inspector loaded
-2019-03-11T06:11:17.281Z - success: keystore loaded
-2019-03-11T06:11:17.286Z - success: node-library loaded
-2019-03-11T06:11:17.288Z - success: package-asset loaded
-2019-03-11T06:11:17.290Z - success: preferences loaded
-2019-03-11T06:11:17.293Z - success: project-exporter loaded
-2019-03-11T06:11:17.313Z - success: project-importer loaded
-2019-03-11T06:11:17.316Z - success: project-settings loaded
-2019-03-11T06:11:17.323Z - success: ui-kit loaded
-2019-03-11T06:11:17.329Z - success: ui-grid loaded
-2019-03-11T06:11:17.335Z - success: scene loaded
-2019-03-11T06:11:17.336Z - success: sprite-editor loaded
-2019-03-11T06:11:17.341Z - success: store loaded
-2019-03-11T06:11:17.349Z - success: timeline loaded
-2019-03-11T06:11:17.349Z - normal: Loading builtin packages
-2019-03-11T06:11:17.355Z - success: asset-db-debugger loaded
-2019-03-11T06:11:17.356Z - success: color-picker loaded
-2019-03-11T06:11:17.362Z - success: package-manager loaded
-2019-03-11T06:11:17.363Z - success: qqplay-adapter loaded
-2019-03-11T06:11:17.371Z - success: sdkbox loaded
-2019-03-11T06:11:17.377Z - success: tester loaded
-2019-03-11T06:11:17.382Z - success: ui-kit-preview-extra loaded
-2019-03-11T06:11:17.386Z - success: ui-kit-preview loaded
-2019-03-11T06:11:17.390Z - success: ui-tree loaded
-2019-03-11T06:11:17.391Z - success: weapp-adapter loaded
-2019-03-11T06:11:18.494Z - normal: Initializing project /Users/huangbuchao/webPrejects/CocosHammer.JS
-2019-03-11T06:11:18.496Z - normal: Loading packages
-2019-03-11T06:11:18.501Z - normal: Watching packages
-2019-03-11T06:11:18.633Z - normal: Run Application
-2019-03-11T06:11:19.154Z - success: preview server running at http://localhost:7457
-2019-03-11T06:11:24.173Z - normal: 1.9.3
-2019-03-11T06:11:38.588Z - error: Failed to reset layout: Error: Failed to close panel scene
-    at Object.Panel._unloadAll (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/panel.js:1:2459)
-    at Async.waterfall.e (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/ui/utils/dock-utils.js:1:8071)
-    at fn (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:746:34)
-    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:1213:16
-    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:166:37
-    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:706:43
-    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:167:37
-    at Object.async.waterfall (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:710:44)
-    at Object.DockUtils.reset (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/ui/utils/dock-utils.js:1:8050)
-    at EventEmitter.ipcRenderer.on (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/ui/utils/dock-utils.js:1:9933)
-    at DockUtils.reset.e (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/ui/utils/dock-utils.js:1:9971)
-    at Async.waterfall.e (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/ui/utils/dock-utils.js:1:9060)
-    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:52:16
-    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:696:30
-    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:167:37
-    at Immediate.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:1206:34)
-    at runCallback (timers.js:672:20)
-    at tryOnImmediate (timers.js:645:5)
-    at processImmediate [as _immediateCallback] (timers.js:617:5)
-2019-03-11T06:14:11.558Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:3426
-2019-03-11T06:14:11.560Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:3428
-2019-03-11T06:17:31.971Z - error: A Class already exists with the same __classname__ : "CocosHammer".
-    at /Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/js.js:373:24
-    at Object.js.setClassName (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/js.js:403:9)
-    at doDefine (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:339:8)
-    at define (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:358:15)
-    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:920:15)
-    at __define (/Users/huangbuchao/webPrejects/CocosHammer.JS/temp/quick-scripts/assets/Script/cocosHammer.js:17:4)
-    at /Users/huangbuchao/webPrejects/CocosHammer.JS/temp/quick-scripts/assets/Script/cocosHammer.js:51:13
-    at Object.<anonymous> (/Users/huangbuchao/webPrejects/CocosHammer.JS/temp/quick-scripts/assets/Script/cocosHammer.js:58:11)
-    at Object.<anonymous> (/Users/huangbuchao/webPrejects/CocosHammer.JS/temp/quick-scripts/assets/Script/cocosHammer.js:61:3)
-2019-03-11T06:17:31.972Z - error: A Class already exists with the same __cid__ : "4c383GideJFz6KHMTiKyX5R".
-    at Object._setClassId (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/js.js:373:24)
-    at define (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:364:20)
-    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:920:15)
-    at __define (/Users/huangbuchao/webPrejects/CocosHammer.JS/temp/quick-scripts/assets/Script/cocosHammer.js:17:4)
-    at /Users/huangbuchao/webPrejects/CocosHammer.JS/temp/quick-scripts/assets/Script/cocosHammer.js:51:13
-    at Object.<anonymous> (/Users/huangbuchao/webPrejects/CocosHammer.JS/temp/quick-scripts/assets/Script/cocosHammer.js:58:11)
-    at Object.<anonymous> (/Users/huangbuchao/webPrejects/CocosHammer.JS/temp/quick-scripts/assets/Script/cocosHammer.js:61:3)
-    at Module._compile (module.js:571:32)
-    at Object.Module._extensions..js (module.js:580:10)
-2019-03-11T06:20:29.094Z - normal: Simulator: WORKAREA WIDTH 1402.00, HEIGHT 855.00
-2019-03-11T06:20:29.102Z - normal: Simulator: FRAME SCALE = 1.00
-2019-03-11T06:20:29.371Z - normal: Simulator: 
-2019-03-11T06:20:29.371Z - normal: Simulator: {
-2019-03-11T06:20:29.371Z - normal: Simulator: 	gl.supports_OES_map_buffer: false
-2019-03-11T06:20:29.372Z - normal: Simulator: 	gl.supports_vertex_array_object: true
-2019-03-11T06:20:29.389Z - normal: Simulator: 	cocos2d.x.version: Cocos2d-x-lite v1.8.2
-2019-03-11T06:20:29.389Z - normal: Simulator: 	gl.vendor: NVIDIA Corporation
-2019-03-11T06:20:29.389Z - normal: Simulator: 	gl.supports_PVRTC: false
-2019-03-11T06:20:29.390Z - normal: Simulator: 	gl.renderer: NVIDIA GeForce GT 650M OpenGL Engine
-2019-03-11T06:20:29.390Z - normal: Simulator: 	cocos2d.x.compiled_with_profiler: false
-2019-03-11T06:20:29.390Z - normal: Simulator: 	gl.max_texture_size: 16384
-2019-03-11T06:20:29.390Z - normal: Simulator: 	gl.supports_ETC1: false
-2019-03-11T06:20:29.391Z - normal: Simulator: 	gl.supports_BGRA8888: false
-2019-03-11T06:20:29.391Z - normal: Simulator: 	cocos2d.x.build_type: DEBUG
-2019-03-11T06:20:29.391Z - normal: Simulator: 	gl.max_texture_units: 16
-2019-03-11T06:20:29.391Z - normal: Simulator: 	gl.supports_OES_packed_depth_stencil: false
-2019-03-11T06:20:29.392Z - normal: Simulator: 	gl.supports_discard_framebuffer: false
-2019-03-11T06:20:29.392Z - normal: Simulator: 	gl.supports_NPOT: true
-2019-03-11T06:20:29.392Z - normal: Simulator: 	gl.version: 2.1 NVIDIA-12.0.21 355.11.10.50.10.103
-2019-03-11T06:20:29.392Z - normal: Simulator: 	cocos2d.x.compiled_with_gl_state_cache: true
-2019-03-11T06:20:29.393Z - normal: Simulator: 	gl.supports_OES_depth24: false
-2019-03-11T06:20:29.393Z - normal: Simulator: }
-2019-03-11T06:20:29.393Z - normal: Simulator: 
-2019-03-11T06:20:29.393Z - normal: Simulator: 
-2019-03-11T06:20:29.393Z - normal: Simulator: cocos2d: warning, Director::setProjection() failed because size is 0
-2019-03-11T06:20:29.395Z - normal: Simulator: Project Config:
-2019-03-11T06:20:29.395Z - normal: Simulator:     project dir: /Applications/CocosCreator.app/Contents/Resources/cocos2d-x/simulator/mac/Simulator.app/Contents/Resources/
-2019-03-11T06:20:29.396Z - normal: Simulator:     writable path: $(PROJDIR)/
-2019-03-11T06:20:29.396Z - normal: Simulator:     script file: $(PROJDIR)/main.js
-2019-03-11T06:20:29.396Z - normal: Simulator:     frame size: 960 x 640
-2019-03-11T06:20:29.397Z - normal: Simulator:     frame scale: 1.00
-2019-03-11T06:20:29.397Z - normal: Simulator:     show console: NO
-2019-03-11T06:20:29.397Z - normal: Simulator:     write debug log: NO ()
-2019-03-11T06:20:29.397Z - normal: Simulator:     listen: 
-2019-03-11T06:20:29.397Z - normal: Simulator:     debugger: none
-2019-03-11T06:20:29.397Z - normal: Simulator:     add searching path:
-2019-03-11T06:20:29.411Z - normal: Simulator: ------------------------------------------------
-2019-03-11T06:20:29.411Z - normal: Simulator: LOAD Js FILE: main.js
-2019-03-11T06:20:29.412Z - normal: Simulator: ------------------------------------------------
-2019-03-11T06:20:29.412Z - normal: Simulator: Initializing JavaScriptCore 
-2019-03-11T06:20:29.543Z - normal: Simulator: JS: Cocos2d-x-lite v1.8.2
-2019-03-11T06:20:29.779Z - normal: Simulator: iShow!
-2019-03-11T06:20:30.124Z - normal: Simulator: JS: InitScene: 3.201000000000022ms
-2019-03-11T06:20:30.125Z - normal: Simulator: JS: AutoRelease: 0.1409999999999627ms
-2019-03-11T06:20:30.125Z - normal: Simulator: JS: Destroy: 0.09299999999996089ms
-2019-03-11T06:20:30.125Z - normal: Simulator: JS: AttachPersist: 0.0060000000000854925ms
-2019-03-11T06:20:30.145Z - normal: Simulator: JS: [WARN]: Sorry, lineHeight of system font not supported on JSB.
-2019-03-11T06:20:30.146Z - normal: Simulator: JS: function Hammer(element, options) {
-2019-03-11T06:20:30.147Z - normal: Simulator:     options = options || {};
-2019-03-11T06:20:30.147Z - normal: Simulator:     options.recognizers = ifUndefined(options.recognizers, Hammer.defaults.preset);
-2019-03-11T06:20:30.147Z - normal: Simulator:     return new Manager(element, options);
-2019-03-11T06:20:30.148Z - normal: Simulator:   }
-2019-03-11T06:20:30.150Z - normal: Simulator: JS: Activate: 24.272000000000048ms
-2019-03-11T06:20:31.440Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:31.441Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:31.442Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:31.442Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:31.571Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:31.571Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:31.743Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:31.743Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:31.743Z - normal: Simulator: JS: success state: 9
-2019-03-11T06:20:31.743Z - normal: Simulator: JS: success data: [object Object]
-2019-03-11T06:20:31.743Z - normal: Simulator: JS: canEmit
-2019-03-11T06:20:31.744Z - normal: Simulator: JS: eventType:  swipeleft
-2019-03-11T06:20:31.745Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:31.763Z - normal: Simulator: JS: eventType:  swipe
-2019-03-11T06:20:31.764Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.726Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.726Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.727Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.727Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.745Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.746Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.746Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.746Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.762Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.762Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.763Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.763Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.778Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.778Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.779Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.779Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.796Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.796Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.820Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.821Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.821Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.821Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.833Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.833Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.833Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.834Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:32.838Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:32.838Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:33.147Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:33.147Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:33.148Z - normal: Simulator: JS: success state: 9
-2019-03-11T06:20:33.148Z - normal: Simulator: JS: success data: [object Object]
-2019-03-11T06:20:33.148Z - normal: Simulator: JS: canEmit
-2019-03-11T06:20:33.148Z - normal: Simulator: JS: eventType:  swiperight
-2019-03-11T06:20:33.148Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:33.165Z - normal: Simulator: JS: eventType:  swipe
-2019-03-11T06:20:33.165Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:33.763Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:33.764Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:33.764Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:33.764Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:33.781Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:33.781Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:33.796Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:33.797Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:33.814Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:33.814Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:33.831Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:33.832Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:33.845Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:33.846Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:33.863Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:33.863Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:34.075Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:34.075Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:34.076Z - normal: Simulator: JS: success state: 9
-2019-03-11T06:20:34.076Z - normal: Simulator: JS: success data: [object Object]
-2019-03-11T06:20:34.076Z - normal: Simulator: JS: canEmit
-2019-03-11T06:20:34.076Z - normal: Simulator: JS: eventType:  swipeleft
-2019-03-11T06:20:34.076Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:34.095Z - normal: Simulator: JS: eventType:  swipe
-2019-03-11T06:20:34.095Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:34.642Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:34.643Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:34.644Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:34.645Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:34.662Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:34.662Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:34.680Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:34.680Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:34.680Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:34.680Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:34.690Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:34.691Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:34.697Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:34.697Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:34.706Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:34.706Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:34.712Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:34.712Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.465Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.465Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.465Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.465Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.480Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.480Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.496Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.496Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.512Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.512Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.529Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.529Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.546Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.546Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.546Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.546Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.564Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.564Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.564Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.564Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.579Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.579Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.596Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.597Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.612Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.612Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.629Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.629Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:35.645Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:35.647Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:36.076Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:36.076Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:36.476Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:36.476Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:36.496Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:36.496Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:36.859Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:36.859Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:36.880Z - normal: Simulator: JS: eventType:  hammer.input
-2019-03-11T06:20:36.880Z - normal: Simulator: JS: handlers:  [object Object]
-2019-03-11T06:20:38.638Z - normal: Simulator: ScriptEngine::cleanup begin ...
-2019-03-11T06:20:38.638Z - normal: Simulator: GC begin ..., (Native -> JS map) count: 64
-2019-03-11T06:20:38.648Z - normal: Simulator: GC end ..., (Native -> JS map) count: 37
-2019-03-11T06:20:38.648Z - normal: Simulator: GC begin ..., (Native -> JS map) count: 37
-2019-03-11T06:20:38.649Z - normal: Simulator: GC end ..., (Native -> JS map) count: 37
-2019-03-11T06:20:38.649Z - normal: Simulator: GC begin ..., (Native -> JS map) count: 37
-2019-03-11T06:20:38.652Z - normal: Simulator: GC end ..., (Native -> JS map) count: 37
-2019-03-11T06:20:38.665Z - normal: Simulator: Starting to cleanup dragonbones object, count: 0
-2019-03-11T06:20:38.667Z - normal: Simulator: After first cleanup, dragonbones object remained count: 0
-2019-03-11T06:20:38.667Z - normal: Simulator: After second cleanup, dragonbones object remained count: 0
-2019-03-11T06:20:38.667Z - normal: Simulator: ScriptEngine::cleanup end ...
+2019-03-11T06:22:47.239Z - normal: Load ~/.CocosCreator/settings.json
+2019-03-11T06:22:47.243Z - normal: checking language setting...
+2019-03-11T06:22:47.243Z - normal: Language: en
+2019-03-11T06:22:47.934Z - success: protocol editor-framework registered
+2019-03-11T06:22:47.935Z - success: protocol app registered
+2019-03-11T06:22:47.935Z - success: protocol theme registered
+2019-03-11T06:22:47.935Z - success: protocol packages registered
+2019-03-11T06:22:47.935Z - success: protocol unpack registerred
+2019-03-11T06:22:47.936Z - success: protocol disable-commonjs registerred
+2019-03-11T06:22:50.927Z - normal: failed to connect login server due to request timeout
+2019-03-11T06:22:50.928Z - normal: Check project /Users/huangbuchao/webPrejects/CocosHammer.JS
+2019-03-11T06:22:50.930Z - normal: Initializing Cocos2d
+2019-03-11T06:22:51.174Z - normal: Initializing Asset Database
+2019-03-11T06:22:51.228Z - success: protocol uuid registerred
+2019-03-11T06:22:51.229Z - success: protocol db registerred
+2019-03-11T06:22:51.229Z - success: protocol thumbnail registerred
+2019-03-11T06:22:51.229Z - normal: Loading editor/builtin packages
+2019-03-11T06:22:51.263Z - success: anysdk loaded
+2019-03-11T06:22:51.412Z - success: assets loaded
+2019-03-11T06:22:51.416Z - success: builder loaded
+2019-03-11T06:22:51.418Z - success: cocos-analytics loaded
+2019-03-11T06:22:51.423Z - success: console loaded
+2019-03-11T06:22:51.460Z - success: fb-instant-games loaded
+2019-03-11T06:22:51.465Z - success: hierarchy loaded
+2019-03-11T06:22:51.470Z - success: inspector loaded
+2019-03-11T06:22:51.471Z - success: keystore loaded
+2019-03-11T06:22:51.476Z - success: node-library loaded
+2019-03-11T06:22:51.478Z - success: package-asset loaded
+2019-03-11T06:22:51.479Z - success: preferences loaded
+2019-03-11T06:22:51.483Z - success: project-exporter loaded
+2019-03-11T06:22:51.500Z - success: project-importer loaded
+2019-03-11T06:22:51.504Z - success: project-settings loaded
+2019-03-11T06:22:51.508Z - success: ui-kit loaded
+2019-03-11T06:22:51.514Z - success: ui-grid loaded
+2019-03-11T06:22:51.519Z - success: scene loaded
+2019-03-11T06:22:51.521Z - success: sprite-editor loaded
+2019-03-11T06:22:51.525Z - success: store loaded
+2019-03-11T06:22:51.532Z - success: timeline loaded
+2019-03-11T06:22:51.532Z - normal: Loading builtin packages
+2019-03-11T06:22:51.537Z - success: asset-db-debugger loaded
+2019-03-11T06:22:51.538Z - success: color-picker loaded
+2019-03-11T06:22:51.546Z - success: package-manager loaded
+2019-03-11T06:22:51.546Z - success: qqplay-adapter loaded
+2019-03-11T06:22:51.554Z - success: sdkbox loaded
+2019-03-11T06:22:51.560Z - warn: 会话不存在或已过期
+2019-03-11T06:22:51.567Z - success: tester loaded
+2019-03-11T06:22:51.571Z - success: ui-kit-preview-extra loaded
+2019-03-11T06:22:51.574Z - success: ui-kit-preview loaded
+2019-03-11T06:22:51.578Z - success: ui-tree loaded
+2019-03-11T06:22:51.579Z - success: weapp-adapter loaded
+2019-03-11T06:22:52.750Z - normal: Initializing project /Users/huangbuchao/webPrejects/CocosHammer.JS
+2019-03-11T06:22:52.752Z - normal: Loading packages
+2019-03-11T06:22:52.758Z - normal: Watching packages
+2019-03-11T06:22:52.890Z - normal: Run Application
+2019-03-11T06:22:53.535Z - success: preview server running at http://localhost:7457
+2019-03-11T06:22:58.369Z - normal: 1.9.3

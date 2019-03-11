@@ -306,7 +306,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 147,
+      "width": 314,
       "height": 60
     },
     "_rotationX": 0,
@@ -341,7 +341,7 @@
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
-    "_N$string": "Label",
+    "_N$string": "gesture test",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
