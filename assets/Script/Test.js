@@ -1,4 +1,4 @@
-import Hammer from "./cocosHammer";
+import Hammer from "./CocosHammer";
 
 cc.Class({
   extends: cc.Component,

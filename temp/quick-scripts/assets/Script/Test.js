@@ -4,9 +4,9 @@ cc._RF.push(module, 'd2a8fWNuV5KtKsS42SoChwD', 'Test', __filename);
 
 "use strict";
 
-var _cocosHammer = require("./cocosHammer");
+var _CocosHammer = require("./CocosHammer");
 
-var _cocosHammer2 = _interopRequireDefault(_cocosHammer);
+var _CocosHammer2 = _interopRequireDefault(_CocosHammer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21,8 +21,8 @@ cc.Class({
     this.labelComp = this.node.children[0].getComponent(cc.Label);
   },
   initHammer: function initHammer() {
-    console.log(_cocosHammer2.default);
-    var mc = new _cocosHammer2.default.Manager(this.node);
+    console.log(_CocosHammer2.default);
+    var mc = new _CocosHammer2.default.Manager(this.node);
 
     // mc.add(
     //     new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 })
@@ -30,7 +30,7 @@ cc.Class({
     // mc.add(new Hammer.Tap({ event: 'singleTap' }));
     // mc.add(new Hammer.Tap({ event: 'doubleTap', taps: 2 }));
     // mc.add(new Hammer.Tap({ event: 'quadrupletap', taps: 4 }));
-    mc.add(new _cocosHammer2.default.Swipe({ direction: _cocosHammer2.default.DIRECTION_ALL }));
+    mc.add(new _CocosHammer2.default.Swipe({ direction: _CocosHammer2.default.DIRECTION_ALL }));
     //mc.add(new Hammer.Press());
 
     //mc.get('pan').recognizeWith('swipe');

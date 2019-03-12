@@ -5,9 +5,9 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 39,
+      "x": 40,
       "y": 23,
-      "width": 1401,
+      "width": 1400,
       "height": 877,
       "layout": {
         "children": [
@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 375.234375,
+                "height": 375,
                 "type": "panel",
-                "width": 223.46875
+                "width": 223
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 407.765625,
+                "height": 408,
                 "type": "panel",
-                "width": 223.46875
+                "width": 223
               }
             ],
             "height": 786,
             "type": "dock-v",
-            "width": 223.46875
+            "width": 223
           },
           {
             "active": 0,
@@ -43,7 +43,7 @@
             ],
             "height": 786,
             "type": "panel",
-            "width": 333.015625
+            "width": 333
           },
           {
             "children": [
@@ -52,9 +52,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 450.28125,
+                "height": 450,
                 "type": "panel",
-                "width": 832.53125
+                "width": 832
               },
               {
                 "active": 0,
@@ -62,14 +62,14 @@
                   "console",
                   "timeline"
                 ],
-                "height": 332.71875,
+                "height": 333,
                 "type": "panel",
-                "width": 832.53125
+                "width": 832
               }
             ],
             "height": 786,
             "type": "dock-v",
-            "width": 832.53125
+            "width": 832
           }
         ],
         "type": "dock-h"
