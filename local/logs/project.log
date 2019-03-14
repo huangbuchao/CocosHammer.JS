@@ -1,56 +1,56 @@
-2019-03-11T06:22:47.239Z - normal: Load ~/.CocosCreator/settings.json
-2019-03-11T06:22:47.243Z - normal: checking language setting...
-2019-03-11T06:22:47.243Z - normal: Language: en
-2019-03-11T06:22:47.934Z - success: protocol editor-framework registered
-2019-03-11T06:22:47.935Z - success: protocol app registered
-2019-03-11T06:22:47.935Z - success: protocol theme registered
-2019-03-11T06:22:47.935Z - success: protocol packages registered
-2019-03-11T06:22:47.935Z - success: protocol unpack registerred
-2019-03-11T06:22:47.936Z - success: protocol disable-commonjs registerred
-2019-03-11T06:22:50.927Z - normal: failed to connect login server due to request timeout
-2019-03-11T06:22:50.928Z - normal: Check project /Users/huangbuchao/webPrejects/CocosHammer.JS
-2019-03-11T06:22:50.930Z - normal: Initializing Cocos2d
-2019-03-11T06:22:51.174Z - normal: Initializing Asset Database
-2019-03-11T06:22:51.228Z - success: protocol uuid registerred
-2019-03-11T06:22:51.229Z - success: protocol db registerred
-2019-03-11T06:22:51.229Z - success: protocol thumbnail registerred
-2019-03-11T06:22:51.229Z - normal: Loading editor/builtin packages
-2019-03-11T06:22:51.263Z - success: anysdk loaded
-2019-03-11T06:22:51.412Z - success: assets loaded
-2019-03-11T06:22:51.416Z - success: builder loaded
-2019-03-11T06:22:51.418Z - success: cocos-analytics loaded
-2019-03-11T06:22:51.423Z - success: console loaded
-2019-03-11T06:22:51.460Z - success: fb-instant-games loaded
-2019-03-11T06:22:51.465Z - success: hierarchy loaded
-2019-03-11T06:22:51.470Z - success: inspector loaded
-2019-03-11T06:22:51.471Z - success: keystore loaded
-2019-03-11T06:22:51.476Z - success: node-library loaded
-2019-03-11T06:22:51.478Z - success: package-asset loaded
-2019-03-11T06:22:51.479Z - success: preferences loaded
-2019-03-11T06:22:51.483Z - success: project-exporter loaded
-2019-03-11T06:22:51.500Z - success: project-importer loaded
-2019-03-11T06:22:51.504Z - success: project-settings loaded
-2019-03-11T06:22:51.508Z - success: ui-kit loaded
-2019-03-11T06:22:51.514Z - success: ui-grid loaded
-2019-03-11T06:22:51.519Z - success: scene loaded
-2019-03-11T06:22:51.521Z - success: sprite-editor loaded
-2019-03-11T06:22:51.525Z - success: store loaded
-2019-03-11T06:22:51.532Z - success: timeline loaded
-2019-03-11T06:22:51.532Z - normal: Loading builtin packages
-2019-03-11T06:22:51.537Z - success: asset-db-debugger loaded
-2019-03-11T06:22:51.538Z - success: color-picker loaded
-2019-03-11T06:22:51.546Z - success: package-manager loaded
-2019-03-11T06:22:51.546Z - success: qqplay-adapter loaded
-2019-03-11T06:22:51.554Z - success: sdkbox loaded
-2019-03-11T06:22:51.560Z - warn: 会话不存在或已过期
-2019-03-11T06:22:51.567Z - success: tester loaded
-2019-03-11T06:22:51.571Z - success: ui-kit-preview-extra loaded
-2019-03-11T06:22:51.574Z - success: ui-kit-preview loaded
-2019-03-11T06:22:51.578Z - success: ui-tree loaded
-2019-03-11T06:22:51.579Z - success: weapp-adapter loaded
-2019-03-11T06:22:52.750Z - normal: Initializing project /Users/huangbuchao/webPrejects/CocosHammer.JS
-2019-03-11T06:22:52.752Z - normal: Loading packages
-2019-03-11T06:22:52.758Z - normal: Watching packages
-2019-03-11T06:22:52.890Z - normal: Run Application
-2019-03-11T06:22:53.535Z - success: preview server running at http://localhost:7457
-2019-03-11T06:22:58.369Z - normal: 1.9.3
+2019-03-14T02:54:00.578Z - normal: Load ~/.CocosCreator/settings.json
+2019-03-14T02:54:00.581Z - normal: checking language setting...
+2019-03-14T02:54:00.582Z - normal: Language: en
+2019-03-14T02:54:01.549Z - success: protocol editor-framework registered
+2019-03-14T02:54:01.549Z - success: protocol app registered
+2019-03-14T02:54:01.549Z - success: protocol theme registered
+2019-03-14T02:54:01.550Z - success: protocol packages registered
+2019-03-14T02:54:01.550Z - success: protocol unpack registerred
+2019-03-14T02:54:01.550Z - success: protocol disable-commonjs registerred
+2019-03-14T02:54:01.649Z - normal: connected!
+2019-03-14T02:54:01.652Z - normal: Check project /Users/huangbuchao/webPrejects/CocosHammer.JS
+2019-03-14T02:54:01.654Z - normal: Initializing Cocos2d
+2019-03-14T02:54:01.929Z - warn: 会话不存在或已过期
+2019-03-14T02:54:01.939Z - normal: Initializing Asset Database
+2019-03-14T02:54:01.982Z - success: protocol uuid registerred
+2019-03-14T02:54:01.982Z - success: protocol db registerred
+2019-03-14T02:54:01.982Z - success: protocol thumbnail registerred
+2019-03-14T02:54:01.982Z - normal: Loading editor/builtin packages
+2019-03-14T02:54:02.015Z - success: anysdk loaded
+2019-03-14T02:54:02.166Z - success: assets loaded
+2019-03-14T02:54:02.304Z - success: builder loaded
+2019-03-14T02:54:02.307Z - success: cocos-analytics loaded
+2019-03-14T02:54:02.313Z - success: console loaded
+2019-03-14T02:54:02.355Z - success: fb-instant-games loaded
+2019-03-14T02:54:02.576Z - success: hierarchy loaded
+2019-03-14T02:54:02.584Z - success: inspector loaded
+2019-03-14T02:54:02.585Z - success: keystore loaded
+2019-03-14T02:54:02.608Z - success: node-library loaded
+2019-03-14T02:54:02.610Z - success: package-asset loaded
+2019-03-14T02:54:02.613Z - success: preferences loaded
+2019-03-14T02:54:02.617Z - success: project-exporter loaded
+2019-03-14T02:54:02.664Z - success: project-importer loaded
+2019-03-14T02:54:02.669Z - success: project-settings loaded
+2019-03-14T02:54:02.685Z - success: ui-kit loaded
+2019-03-14T02:54:02.694Z - success: ui-grid loaded
+2019-03-14T02:54:02.700Z - success: scene loaded
+2019-03-14T02:54:02.701Z - success: sprite-editor loaded
+2019-03-14T02:54:02.706Z - success: store loaded
+2019-03-14T02:54:02.714Z - success: timeline loaded
+2019-03-14T02:54:02.714Z - normal: Loading builtin packages
+2019-03-14T02:54:02.722Z - success: asset-db-debugger loaded
+2019-03-14T02:54:02.724Z - success: color-picker loaded
+2019-03-14T02:54:02.729Z - success: package-manager loaded
+2019-03-14T02:54:02.730Z - success: qqplay-adapter loaded
+2019-03-14T02:54:02.739Z - success: sdkbox loaded
+2019-03-14T02:54:02.745Z - success: tester loaded
+2019-03-14T02:54:02.749Z - success: ui-kit-preview-extra loaded
+2019-03-14T02:54:02.756Z - success: ui-kit-preview loaded
+2019-03-14T02:54:02.760Z - success: ui-tree loaded
+2019-03-14T02:54:02.762Z - success: weapp-adapter loaded
+2019-03-14T02:54:03.998Z - normal: Initializing project /Users/huangbuchao/webPrejects/CocosHammer.JS
+2019-03-14T02:54:04.001Z - normal: Loading packages
+2019-03-14T02:54:04.006Z - normal: Watching packages
+2019-03-14T02:54:04.152Z - normal: Run Application
+2019-03-14T02:54:05.168Z - success: preview server running at http://localhost:7457
+2019-03-14T02:54:10.877Z - normal: 1.9.3

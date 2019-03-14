@@ -15,18 +15,16 @@ cc.Class({
     console.log(Hammer);
     var mc = new Hammer.Manager(this.node);
 
-    // mc.add(
-    //     new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 })
-    // );
-    // mc.add(new Hammer.Tap({ event: 'singleTap' }));
-    // mc.add(new Hammer.Tap({ event: 'doubleTap', taps: 2 }));
-    // mc.add(new Hammer.Tap({ event: 'quadrupletap', taps: 4 }));
+    // mc.add(new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }));
+    // mc.add(new Hammer.Tap({ event: "singleTap" }));
+    // mc.add(new Hammer.Tap({ event: "doubleTap", taps: 2 }));
+    // mc.add(new Hammer.Tap({ event: "quadrupletap", taps: 4 }));
     mc.add(new Hammer.Swipe({ direction: Hammer.DIRECTION_ALL }));
-    //mc.add(new Hammer.Press());
+    // //mc.add(new Hammer.Press());
 
-    //mc.get('pan').recognizeWith('swipe');
-    // mc.get('doubleTap').recognizeWith('singleTap');
-    // mc.get('quadrupletap').recognizeWith('singleTap');
+    // mc.get("pan").recognizeWith("swipe");
+    // mc.get("doubleTap").recognizeWith("singleTap");
+    // mc.get("quadrupletap").recognizeWith("singleTap");
     //mc.get('singleTap').requireFailure('doubleTap');
 
     mc.on(

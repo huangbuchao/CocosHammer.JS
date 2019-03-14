@@ -1,0 +1,16 @@
+#=========
+
+temp/
+setting/
+local/
+library/
+packages/
+
+#==========
+
+creator.d.ts
+jsconfig.json
+template.json
+template-banner.png
+
+#=========
