@@ -980,7 +980,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      */
     tryEmit: function tryEmit(input) {
       if (this.canEmit()) {
-        console.log("canEmit");
         return this.emit(input);
       }
       // it's failing anyway
@@ -1028,8 +1027,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       // the recognizer has recognized a gesture
       // so trigger an event
       if (this.state & (STATE_BEGAN | STATE_CHANGED | STATE_ENDED | STATE_CANCELLED)) {
-        console.log("success state:", this.state);
-        console.log("success data:", inputDataClone);
         this.tryEmit(inputDataClone);
       }
     },
@@ -1568,7 +1565,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      */
     preset: [
     // RecognizerClass, options, [recognizeWith, ...], [requireFailure, ...]
-    [RotateRecognizer, { enable: false }], [PinchRecognizer, { enable: false }, ["rotate"]], [SwipeRecognizer, { direction: DIRECTION_HORIZONTAL }], [PanRecognizer, { direction: DIRECTION_HORIZONTAL }, ["swipe"]], [TapRecognizer], [TapRecognizer, { event: "doubletap", taps: 2 }, ["tap"]], [PressRecognizer]]
+    [RotateRecognizer, { enable: true }], [PinchRecognizer, { enable: false }, ["rotate"]], [SwipeRecognizer, { direction: DIRECTION_HORIZONTAL }], [PanRecognizer, { direction: DIRECTION_HORIZONTAL }, ["swipe"]], [TapRecognizer], [TapRecognizer, { event: "doubletap", taps: 2 }, ["tap"]], [PressRecognizer]]
   };
 
   var STOP = 1;
@@ -1799,8 +1796,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
      */
     emit: function emit(event, data) {
       // no handlers, so skip it all
-      console.log("eventType: ", event);
-      console.log("handlers: ", this.handlers);
+      // console.log("eventType: ", event);
+      // console.log("handlers: ", this.handlers);
       var handlers = this.handlers[event] && this.handlers[event].slice();
       if (!handlers || !handlers.length) {
         return;

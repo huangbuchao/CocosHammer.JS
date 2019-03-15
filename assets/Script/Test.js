@@ -1,40 +1,102 @@
 import Hammer from "./CocosHammer";
 
+const PREVSET_EVENTS = [
+  "panstart panmove panend pancancel",
+  "tap",
+  "swipe",
+  "press pressup"
+];
+const HANDLE_MAP = ["onPan", "onTap", "onSwipe", "onPress"];
+const LABEL_TEXT_MAP = ["pan test", "tap test", "swipe test", "press test"];
+
 cc.Class({
   extends: cc.Component,
 
   properties: {},
 
   onLoad() {
-    this.updateLabelTextBind = this.updateLabelText.bind(this);
-    this.initHammer();
-    this.labelComp = this.node.children[0].getComponent(cc.Label);
+    this.initPosition = this.node.getPosition();
+    this.hammer = new Hammer(this.node);
+    this.refreshRecognizer(0);
   },
 
-  initHammer() {
-    console.log(Hammer);
-    var mc = new Hammer.Manager(this.node);
+  /**
+   * on button click, convert corresponding recognizer.
+   * @param {cc.Event} e
+   * @param {customData} data
+   */
+  convertRecognizer(e, data) {
+    this.updateLabel(LABEL_TEXT_MAP[data]);
+    this.refreshRecognizer(parseInt(data));
+  },
 
-    // mc.add(new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }));
-    // mc.add(new Hammer.Tap({ event: "singleTap" }));
-    // mc.add(new Hammer.Tap({ event: "doubleTap", taps: 2 }));
-    // mc.add(new Hammer.Tap({ event: "quadrupletap", taps: 4 }));
-    mc.add(new Hammer.Swipe({ direction: Hammer.DIRECTION_ALL }));
-    // //mc.add(new Hammer.Press());
+  /**
+   * remove prevent event handlers, add required event listener.
+   * @param {number} value
+   */
+  refreshRecognizer(value) {
+    if (this.prevEventSet) {
+      this.hammer.off(this.prevEventSet);
+    }
+    this.prevEventSet = PREVSET_EVENTS[parseInt(value)];
+    this.hammer.on(this.prevEventSet, this.eventDelegate.bind(this, value));
+  },
 
-    // mc.get("pan").recognizeWith("swipe");
-    // mc.get("doubleTap").recognizeWith("singleTap");
-    // mc.get("quadrupletap").recognizeWith("singleTap");
-    //mc.get('singleTap').requireFailure('doubleTap');
+  /**
+   * delegate different events, invoke corresponding handler.
+   * @param {wrapped event target} e
+   */
+  eventDelegate() {
+    console.log("listened: ", arguments[1].type);
+    this.updateLabel(arguments[1].type + " gesture detected.");
+    this[HANDLE_MAP[arguments[0]]](arguments[1]);
+  },
 
-    mc.on(
-      "panleft panright panup pandown singleTap doubleTap quadrupletap swipeleft swiperight swipeup swipedown press",
-      this.updateLabelText.bind(this)
+  /**
+   * update label's text
+   * @param {String || undefined} str
+   */
+  updateLabel(str) {
+    this.node.parent
+      .getChildByName("manager")
+      .getChildByName("label")
+      .getComponent(cc.Label).string = str || "";
+  },
+
+  resetNode() {
+    this.node.setPosition(this.initPosition);
+    this.node.setScale(1, 1);
+  },
+
+  /**
+   * handle selfType event.
+   * @param {wrapped event target} e
+   */
+  onPan(e) {
+    let eventType = e.type;
+    if (eventType === "panstart") {
+      this.startPoint = this.node.getPosition();
+    }
+    this.node.setPosition(
+      this.startPoint.x + e.deltaX,
+      this.startPoint.y + e.deltaY
     );
+    if (eventType === "panend" || eventType === "pancancel") {
+      this.resetNode();
+    }
   },
 
-  updateLabelText(e) {
-    let text = e.type + " gesture detected.";
-    this.labelComp.string = text;
+  onTap() {},
+
+  onSwipe() {},
+
+  onPress(e) {
+    let eventType = e.type;
+    if (eventType === "press") {
+      this.node.setScale(0.8, 0.8);
+    }
+    if (eventType === "pressup") {
+      this.node.setScale(1, 1);
+    }
   }
 });

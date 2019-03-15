@@ -1030,7 +1030,6 @@
      */
     tryEmit: function(input) {
       if (this.canEmit()) {
-        console.log("canEmit");
         return this.emit(input);
       }
       // it's failing anyway
@@ -1081,8 +1080,6 @@
         this.state &
         (STATE_BEGAN | STATE_CHANGED | STATE_ENDED | STATE_CANCELLED)
       ) {
-        console.log("success state:", this.state);
-        console.log("success data:", inputDataClone);
         this.tryEmit(inputDataClone);
       }
     },
@@ -1669,7 +1666,7 @@
      */
     preset: [
       // RecognizerClass, options, [recognizeWith, ...], [requireFailure, ...]
-      [RotateRecognizer, { enable: false }],
+      [RotateRecognizer, { enable: true }],
       [PinchRecognizer, { enable: false }, ["rotate"]],
       [SwipeRecognizer, { direction: DIRECTION_HORIZONTAL }],
       [PanRecognizer, { direction: DIRECTION_HORIZONTAL }, ["swipe"]],
@@ -1921,8 +1918,8 @@
      */
     emit: function(event, data) {
       // no handlers, so skip it all
-      console.log("eventType: ", event);
-      console.log("handlers: ", this.handlers);
+      // console.log("eventType: ", event);
+      // console.log("handlers: ", this.handlers);
       var handlers = this.handlers[event] && this.handlers[event].slice();
       if (!handlers || !handlers.length) {
         return;
