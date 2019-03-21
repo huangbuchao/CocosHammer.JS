@@ -1,10 +1,10 @@
 #=========
 
-temp
-setting/
-local/
-library
-packages/
+/temp
+/setting
+/local
+/library
+/packages
 
 #==========
 
