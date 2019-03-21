@@ -10,7 +10,7 @@ var _CocosHammer2 = _interopRequireDefault(_CocosHammer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var PREVSET_EVENTS = ["panstart panmove panend pancancel", "tap", "swipe", "press pressup"];
+var PREVSET_EVENTS = ["panstart panmove panend pancancel", "tap", "swipeleft swiperight", "press pressup"];
 var HANDLE_MAP = ["onPan", "onTap", "onSwipe", "onPress"];
 var LABEL_TEXT_MAP = ["pan test", "tap test", "swipe test", "press test"];
 
@@ -89,7 +89,10 @@ cc.Class({
     }
   },
   onTap: function onTap() {},
-  onSwipe: function onSwipe() {},
+  onSwipe: function onSwipe(e) {
+    var eventType = e.type;
+    console.log(e);
+  },
   onPress: function onPress(e) {
     var eventType = e.type;
     if (eventType === "press") {

@@ -3,7 +3,7 @@ import Hammer from "./CocosHammer";
 const PREVSET_EVENTS = [
   "panstart panmove panend pancancel",
   "tap",
-  "swipe",
+  "swipeleft swiperight",
   "press pressup"
 ];
 const HANDLE_MAP = ["onPan", "onTap", "onSwipe", "onPress"];
@@ -88,7 +88,10 @@ cc.Class({
 
   onTap() {},
 
-  onSwipe() {},
+  onSwipe(e) {
+    let eventType = e.type;
+    console.log(e);
+  },
 
   onPress(e) {
     let eventType = e.type;
