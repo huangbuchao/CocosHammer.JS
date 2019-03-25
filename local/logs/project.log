@@ -1,55 +1,59 @@
-2019-03-21T09:52:25.956Z - normal: Load ~/.CocosCreator/settings.json
-2019-03-21T09:52:25.960Z - normal: checking language setting...
-2019-03-21T09:52:25.960Z - normal: Language: en
-2019-03-21T09:52:26.929Z - success: protocol editor-framework registered
-2019-03-21T09:52:26.929Z - success: protocol app registered
-2019-03-21T09:52:26.929Z - success: protocol theme registered
-2019-03-21T09:52:26.929Z - success: protocol packages registered
-2019-03-21T09:52:26.930Z - success: protocol unpack registerred
-2019-03-21T09:52:26.930Z - success: protocol disable-commonjs registerred
-2019-03-21T09:52:27.191Z - normal: connected!
-2019-03-21T09:52:27.192Z - normal: Check project /Users/huangbuchao/webPrejects/CocosHammer.JS
-2019-03-21T09:52:27.193Z - normal: Initializing Cocos2d
-2019-03-21T09:52:27.474Z - normal: Initializing Asset Database
-2019-03-21T09:52:27.596Z - success: protocol uuid registerred
-2019-03-21T09:52:27.596Z - success: protocol db registerred
-2019-03-21T09:52:27.596Z - success: protocol thumbnail registerred
-2019-03-21T09:52:27.596Z - normal: Loading editor/builtin packages
-2019-03-21T09:52:27.635Z - success: anysdk loaded
-2019-03-21T09:52:27.774Z - success: assets loaded
-2019-03-21T09:52:27.784Z - success: builder loaded
-2019-03-21T09:52:27.787Z - success: cocos-analytics loaded
-2019-03-21T09:52:27.800Z - success: console loaded
-2019-03-21T09:52:27.839Z - success: fb-instant-games loaded
-2019-03-21T09:52:27.895Z - success: hierarchy loaded
-2019-03-21T09:52:27.910Z - success: inspector loaded
-2019-03-21T09:52:27.912Z - success: keystore loaded
-2019-03-21T09:52:27.927Z - success: node-library loaded
-2019-03-21T09:52:27.929Z - success: package-asset loaded
-2019-03-21T09:52:27.931Z - success: preferences loaded
-2019-03-21T09:52:27.943Z - success: project-exporter loaded
-2019-03-21T09:52:27.978Z - success: project-importer loaded
-2019-03-21T09:52:27.991Z - success: project-settings loaded
-2019-03-21T09:52:28.006Z - success: ui-kit loaded
-2019-03-21T09:52:28.022Z - success: ui-grid loaded
-2019-03-21T09:52:28.034Z - success: scene loaded
-2019-03-21T09:52:28.036Z - success: sprite-editor loaded
-2019-03-21T09:52:28.047Z - success: store loaded
-2019-03-21T09:52:28.062Z - success: timeline loaded
-2019-03-21T09:52:28.062Z - normal: Loading builtin packages
-2019-03-21T09:52:28.076Z - success: asset-db-debugger loaded
-2019-03-21T09:52:28.078Z - success: color-picker loaded
-2019-03-21T09:52:28.091Z - success: package-manager loaded
-2019-03-21T09:52:28.093Z - success: qqplay-adapter loaded
-2019-03-21T09:52:28.110Z - success: sdkbox loaded
-2019-03-21T09:52:28.125Z - success: tester loaded
-2019-03-21T09:52:28.139Z - success: ui-kit-preview-extra loaded
-2019-03-21T09:52:28.150Z - success: ui-kit-preview loaded
-2019-03-21T09:52:28.161Z - success: ui-tree loaded
-2019-03-21T09:52:28.163Z - success: weapp-adapter loaded
-2019-03-21T09:52:29.380Z - normal: Initializing project /Users/huangbuchao/webPrejects/CocosHammer.JS
-2019-03-21T09:52:29.384Z - normal: Loading packages
-2019-03-21T09:52:29.389Z - normal: Watching packages
-2019-03-21T09:52:29.517Z - normal: Run Application
-2019-03-21T09:52:30.390Z - success: preview server running at http://localhost:7456
-2019-03-21T09:52:35.266Z - normal: 1.9.3
+2019-03-22T11:58:56.821Z - normal: Load ~/.CocosCreator/settings.json
+2019-03-22T11:58:56.825Z - normal: checking language setting...
+2019-03-22T11:58:56.825Z - normal: Language: en
+2019-03-22T11:58:57.783Z - success: protocol editor-framework registered
+2019-03-22T11:58:57.783Z - success: protocol app registered
+2019-03-22T11:58:57.783Z - success: protocol theme registered
+2019-03-22T11:58:57.783Z - success: protocol packages registered
+2019-03-22T11:58:57.784Z - success: protocol unpack registerred
+2019-03-22T11:58:57.784Z - success: protocol disable-commonjs registerred
+2019-03-22T11:58:57.900Z - normal: connected!
+2019-03-22T11:58:57.903Z - normal: Check project /Users/huangbuchao/webPrejects/CocosHammer.JS
+2019-03-22T11:58:57.905Z - normal: Initializing Cocos2d
+2019-03-22T11:58:58.190Z - normal: Initializing Asset Database
+2019-03-22T11:58:58.231Z - success: protocol uuid registerred
+2019-03-22T11:58:58.232Z - success: protocol db registerred
+2019-03-22T11:58:58.232Z - success: protocol thumbnail registerred
+2019-03-22T11:58:58.232Z - normal: Loading editor/builtin packages
+2019-03-22T11:58:58.266Z - success: anysdk loaded
+2019-03-22T11:58:58.401Z - success: assets loaded
+2019-03-22T11:58:58.405Z - success: builder loaded
+2019-03-22T11:58:58.408Z - success: cocos-analytics loaded
+2019-03-22T11:58:58.414Z - success: console loaded
+2019-03-22T11:58:58.450Z - success: fb-instant-games loaded
+2019-03-22T11:58:58.456Z - success: hierarchy loaded
+2019-03-22T11:58:58.462Z - success: inspector loaded
+2019-03-22T11:58:58.464Z - success: keystore loaded
+2019-03-22T11:58:58.469Z - success: node-library loaded
+2019-03-22T11:58:58.471Z - success: package-asset loaded
+2019-03-22T11:58:58.473Z - success: preferences loaded
+2019-03-22T11:58:58.476Z - success: project-exporter loaded
+2019-03-22T11:58:58.497Z - success: project-importer loaded
+2019-03-22T11:58:58.500Z - success: project-settings loaded
+2019-03-22T11:58:58.505Z - success: ui-kit loaded
+2019-03-22T11:58:58.512Z - success: ui-grid loaded
+2019-03-22T11:58:58.517Z - success: scene loaded
+2019-03-22T11:58:58.518Z - success: sprite-editor loaded
+2019-03-22T11:58:58.523Z - success: store loaded
+2019-03-22T11:58:58.531Z - success: timeline loaded
+2019-03-22T11:58:58.531Z - normal: Loading builtin packages
+2019-03-22T11:58:58.538Z - success: asset-db-debugger loaded
+2019-03-22T11:58:58.539Z - success: color-picker loaded
+2019-03-22T11:58:58.544Z - success: package-manager loaded
+2019-03-22T11:58:58.545Z - success: qqplay-adapter loaded
+2019-03-22T11:58:58.552Z - success: sdkbox loaded
+2019-03-22T11:58:58.558Z - success: tester loaded
+2019-03-22T11:58:58.563Z - success: ui-kit-preview-extra loaded
+2019-03-22T11:58:58.567Z - success: ui-kit-preview loaded
+2019-03-22T11:58:58.571Z - success: ui-tree loaded
+2019-03-22T11:58:58.572Z - success: weapp-adapter loaded
+2019-03-22T11:58:59.784Z - normal: Initializing project /Users/huangbuchao/webPrejects/CocosHammer.JS
+2019-03-22T11:58:59.787Z - normal: Loading packages
+2019-03-22T11:58:59.793Z - normal: Watching packages
+2019-03-22T11:58:59.921Z - normal: Run Application
+2019-03-22T11:59:01.429Z - success: preview server running at http://localhost:7456
+2019-03-22T11:59:06.159Z - normal: 1.9.3
+2019-03-22T12:01:19.863Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:2351
+2019-03-22T12:01:19.877Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:2352
+2019-03-22T12:01:19.878Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:2353
+2019-03-22T12:02:53.566Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:3999

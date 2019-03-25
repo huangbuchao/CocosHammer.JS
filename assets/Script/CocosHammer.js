@@ -353,16 +353,6 @@
     return _uniqueId++;
   }
 
-  /**
-   * get the window object of an element
-   * @param {HTMLElement} element
-   * @returns {DocumentView|Window}
-   */
-  function getWindowForElement(element) {
-    var doc = element.ownerDocument || element;
-    return doc.defaultView || doc.parentWindow || window;
-  }
-
   var INPUT_TYPE_TOUCH = "touch";
 
   var COMPUTE_INTERVAL = 25;
@@ -383,7 +373,6 @@
   var DIRECTION_ALL = DIRECTION_HORIZONTAL | DIRECTION_VERTICAL;
 
   var PROPS_XY = ["x", "y"];
-  var PROPS_CLIENT_XY = ["clientX", "clientY"];
 
   /**
    * create new input type manager
@@ -424,12 +413,6 @@
       this.evEl && addEventListeners(this.element, this.evEl, this.nodeHandler);
       this.evTarget &&
         addEventListeners(this.target, this.evTarget, this.nodeHandler);
-      this.evWin &&
-        addEventListeners(
-          getWindowForElement(this.element),
-          this.evWin,
-          this.nodeHandler
-        );
     },
 
     /**
@@ -440,12 +423,6 @@
         removeEventListeners(this.element, this.evEl, this.nodeHandler);
       this.evTarget &&
         removeEventListeners(this.target, this.evTarget, this.nodeHandler);
-      this.evWin &&
-        removeEventListeners(
-          getWindowForElement(this.element),
-          this.evWin,
-          this.nodeHandler
-        );
     }
   };
 
@@ -555,7 +532,7 @@
       : 1;
     input.rotation = firstMultiple
       ? getRotation(firstMultiple.pointers, pointers)
-      : 0;
+      : getRotationByNodePoints(manager, input);
 
     input.maxPointers = !session.prevInput
       ? input.pointers.length
@@ -644,7 +621,7 @@
    */
   function simpleCloneInputData(input) {
     // make a simple copy of the pointers because we will get a reference if we don't
-    // we only need clientXY for the calculations
+    // we only need XY for the calculations
     var pointers = [];
     var i = 0;
     while (i < input.pointers.length) {
@@ -722,7 +699,7 @@
     if (abs(x) >= abs(y)) {
       return x < 0 ? DIRECTION_LEFT : DIRECTION_RIGHT;
     }
-    return y < 0 ? DIRECTION_UP : DIRECTION_DOWN;
+    return y > 0 ? DIRECTION_UP : DIRECTION_DOWN;
   }
 
   /**
@@ -766,8 +743,8 @@
    */
   function getRotation(start, end) {
     return (
-      getAngle(end[1], end[0], PROPS_CLIENT_XY) +
-      getAngle(start[1], start[0], PROPS_CLIENT_XY)
+      getAngle(end[1], end[0], PROPS_XY) +
+      getAngle(start[1], start[0], PROPS_XY) //modified clientX -> x
     );
   }
 
@@ -780,9 +757,38 @@
    */
   function getScale(start, end) {
     return (
-      getDistance(end[0], end[1], PROPS_CLIENT_XY) /
-      getDistance(start[0], start[1], PROPS_CLIENT_XY)
+      getDistance(end[0], end[1], PROPS_XY) /
+      getDistance(start[0], start[1], PROPS_XY) //modified clientX -> x
     );
+  }
+
+  /**
+   * calculate the rotation degrees when rotate a CC.Node instance
+   * @param {cc.p} originPoint node orgin point
+   * @param {cc.p} startPoint touch start point
+   * @param {cc.p} endPoint touch cancel point
+   * @return {Object} include nextAngle and startAngle
+   */
+  function getRotationByNodePoints(manager, input) {
+    var originPoint = manager.elemenOriginPoint;
+    var startPoint = manager.element.convertToNodeSpaceAR(
+      input.srcEvent.getStartLocation()
+    );
+    var endPoint = manager.element.convertToNodeSpaceAR(input.center);
+    const nextAngle = convertAngle(getAngle(endPoint, originPoint));
+    const startAngle = convertAngle(getAngle(startPoint, originPoint));
+    return nextAngle - startAngle;
+  }
+
+  /**
+   * convert angle to positive integer, range 0 to 360 degrees
+   * @param {*} angle
+   */
+  function convertAngle(angle) {
+    if (angle <= 90) {
+      return 90 - angle;
+    }
+    return 450 - angle;
   }
 
   var TOUCH_INPUT_MAP = {
@@ -801,7 +807,6 @@
    */
   function TouchInput() {
     this.evTarget = TOUCH_TARGET_EVENTS;
-    this.targetIds = {};
 
     Input.apply(this, arguments);
   }
@@ -809,17 +814,10 @@
   inherit(TouchInput, Input, {
     handler: function MTEhandler(ev) {
       var type = TOUCH_INPUT_MAP[ev.type];
-      //var touches = getTouches.call(this, ev, type);
-      // var touches = {
-
-      // };
-      // if (!touches) {
-      //     return;
-      // }
-
+      var touchs = [ev.getLocation()];
       this.callback(this.manager, type, {
-        pointers: [ev.getLocation()],
-        changedPointers: [ev.getLocation()],
+        pointers: touchs,
+        changedPointers: touchs,
         pointerType: INPUT_TYPE_TOUCH,
         srcEvent: ev
       });
@@ -897,9 +895,6 @@
      */
     set: function(options) {
       assign(this.options, options);
-
-      // also update the touchAction, in case something changed about the directions/enabled state
-      this.manager && this.manager.touchAction.update();
       return this;
     },
 
@@ -1695,6 +1690,7 @@
     this.recognizers = [];
 
     this.element = element;
+    this.elemenOriginPoint = element.getPosition();
     this.input = createInputInstance(this);
 
     each(
@@ -1870,9 +1866,10 @@
      * bind event
      * @param {String} events
      * @param {Function} handler
+     * @param {Object || Lexical Scope} context
      * @returns {EventEmitter} this
      */
-    on: function(events, handler) {
+    on: function(events, handler, context, ...args) {
       if (events === undefined) {
         return;
       }
@@ -1881,11 +1878,12 @@
       }
 
       var handlers = this.handlers;
+      var handlerBound = handler.bind(context, ...args);
       each(splitStr(events), function(event) {
         handlers[event] = handlers[event] || [];
-        handlers[event].push(handler);
+        handlers[event].push(handlerBound);
       });
-      return this;
+      return handlerBound;
     },
 
     /**
@@ -1894,18 +1892,18 @@
      * @param {Function} [handler]
      * @returns {EventEmitter} this
      */
-    off: function(events, handler) {
+    off: function(events, handlerBound) {
       if (events === undefined) {
         return;
       }
 
       var handlers = this.handlers;
       each(splitStr(events), function(event) {
-        if (!handler) {
+        if (!handlerBound) {
           delete handlers[event];
         } else {
           handlers[event] &&
-            handlers[event].splice(inArray(handlers[event], handler), 1);
+            handlers[event].splice(inArray(handlers[event], handlerBound), 1);
         }
       });
       return this;

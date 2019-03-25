@@ -11,8 +11,8 @@ var _CocosHammer2 = _interopRequireDefault(_CocosHammer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var PREVSET_EVENTS = ["panstart panmove panend pancancel", "tap", "swipeleft swiperight", "press pressup"];
-var HANDLE_MAP = ["onPan", "onTap", "onSwipe", "onPress"];
-var LABEL_TEXT_MAP = ["pan test", "tap test", "swipe test", "press test"];
+var HANDLE_MAP = ["onPan", "onTap", "onSwipe", "onPress", "onRotate"];
+var LABEL_TEXT_MAP = ["pan test", "tap test", "swipe test", "press test", "rotate test"];
 
 cc.Class({
   extends: cc.Component,
@@ -46,7 +46,7 @@ cc.Class({
       this.hammer.off(this.prevEventSet);
     }
     this.prevEventSet = PREVSET_EVENTS[parseInt(value)];
-    this.hammer.on(this.prevEventSet, this.eventDelegate.bind(this, value));
+    this.hammer.on(this.prevEventSet, this.eventDelegate, this, value);
   },
 
 
@@ -80,13 +80,18 @@ cc.Class({
    */
   onPan: function onPan(e) {
     var eventType = e.type;
-    if (eventType === "panstart") {
-      this.startPoint = this.node.getPosition();
-    }
-    this.node.setPosition(this.startPoint.x + e.deltaX, this.startPoint.y + e.deltaY);
-    if (eventType === "panend" || eventType === "pancancel") {
-      this.resetNode();
-    }
+    // if (eventType === "panstart") {
+    //   this.startPoint = this.node.getPosition();
+    // }
+    // this.node.setPosition(
+    //   this.startPoint.x + e.deltaX,
+    //   this.startPoint.y + e.deltaY
+    // );
+    // if (eventType === "panend" || eventType === "pancancel") {
+    //   this.resetNode();
+    // }
+    console.log("rotation", e.rotation);
+    this.node.rotation = e.rotation;
   },
   onTap: function onTap() {},
   onSwipe: function onSwipe(e) {

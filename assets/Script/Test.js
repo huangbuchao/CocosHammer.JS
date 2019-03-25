@@ -6,8 +6,14 @@ const PREVSET_EVENTS = [
   "swipeleft swiperight",
   "press pressup"
 ];
-const HANDLE_MAP = ["onPan", "onTap", "onSwipe", "onPress"];
-const LABEL_TEXT_MAP = ["pan test", "tap test", "swipe test", "press test"];
+const HANDLE_MAP = ["onPan", "onTap", "onSwipe", "onPress", "onRotate"];
+const LABEL_TEXT_MAP = [
+  "pan test",
+  "tap test",
+  "swipe test",
+  "press test",
+  "rotate test"
+];
 
 cc.Class({
   extends: cc.Component,
@@ -39,7 +45,7 @@ cc.Class({
       this.hammer.off(this.prevEventSet);
     }
     this.prevEventSet = PREVSET_EVENTS[parseInt(value)];
-    this.hammer.on(this.prevEventSet, this.eventDelegate.bind(this, value));
+    this.hammer.on(this.prevEventSet, this.eventDelegate, this, value);
   },
 
   /**
@@ -74,16 +80,18 @@ cc.Class({
    */
   onPan(e) {
     let eventType = e.type;
-    if (eventType === "panstart") {
-      this.startPoint = this.node.getPosition();
-    }
-    this.node.setPosition(
-      this.startPoint.x + e.deltaX,
-      this.startPoint.y + e.deltaY
-    );
-    if (eventType === "panend" || eventType === "pancancel") {
-      this.resetNode();
-    }
+    // if (eventType === "panstart") {
+    //   this.startPoint = this.node.getPosition();
+    // }
+    // this.node.setPosition(
+    //   this.startPoint.x + e.deltaX,
+    //   this.startPoint.y + e.deltaY
+    // );
+    // if (eventType === "panend" || eventType === "pancancel") {
+    //   this.resetNode();
+    // }
+    console.log("rotation", e.rotation);
+    this.node.rotation = e.rotation;
   },
 
   onTap() {},
