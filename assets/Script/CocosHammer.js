@@ -525,11 +525,7 @@
         : overallVelocity.y;
 
     input.scale = 1;
-
-    var angleObj = getRotationByNodePoints(manager, input);
-    var nextAngle = angleObj.nextAngle;
-    var startAngle = angleObj.startAngle;
-    input.rotation = nextAngle - startAngle;
+    input.rotation = getRotationByNodePoints(manager, input);
 
     input.maxPointers = !session.prevInput
       ? input.pointers.length
@@ -747,10 +743,9 @@
     var endPoint = manager.element.convertToNodeSpaceAR(input.center);
     const nextAngle = convertAngle(getAngle(endPoint, originPoint));
     const startAngle = convertAngle(getAngle(startPoint, originPoint));
-    return {
-      nextAngle,
-      startAngle
-    };
+    var diffAngle = nextAngle - startAngle;
+    var rotation = round(diffAngle <= 0 ? 360 + diffAngle : diffAngle);
+    return rotation;
   }
 
   /**

@@ -249,14 +249,14 @@
     "meta": 1553519708340,
     "relativePath": "prefab/webview.prefab"
   },
-  "4c3831a2-75e2-45cf-a287-31388ac97e51": {
-    "asset": 1553585996599,
-    "meta": 1553586008601,
-    "relativePath": "Script/CocosHammer.js"
-  },
   "d2a8f58d-b95e-4ab4-ab12-e364a80a1c03": {
-    "asset": 1553586830424,
-    "meta": 1553586831634,
+    "asset": 1553593865847,
+    "meta": 1553593983117,
     "relativePath": "Script/Test.js"
+  },
+  "4c3831a2-75e2-45cf-a287-31388ac97e51": {
+    "asset": 1553594745521,
+    "meta": 1553594760315,
+    "relativePath": "Script/CocosHammer.js"
   }
 }

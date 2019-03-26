@@ -117,7 +117,9 @@ cc.Class({
     if (eventType === "rotatestart") {
       this.initRotation = this.node.rotation;
     }
-    this.node.rotation = this.initRotation + e.rotation;
+    var r = this.initRotation + e.rotation;
+    this.node.rotation = r;
+    console.log(this.node.rotation);
   }
 });
 

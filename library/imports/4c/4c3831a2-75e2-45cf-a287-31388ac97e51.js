@@ -502,11 +502,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     input.overallVelocity = abs(overallVelocity.x) > abs(overallVelocity.y) ? overallVelocity.x : overallVelocity.y;
 
     input.scale = 1;
-
-    var angleObj = getRotationByNodePoints(manager, input);
-    var nextAngle = angleObj.nextAngle;
-    var startAngle = angleObj.startAngle;
-    input.rotation = nextAngle - startAngle;
+    input.rotation = getRotationByNodePoints(manager, input);
 
     input.maxPointers = !session.prevInput ? input.pointers.length : input.pointers.length > session.prevInput.maxPointers ? input.pointers.length : session.prevInput.maxPointers;
 
@@ -715,10 +711,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     var endPoint = manager.element.convertToNodeSpaceAR(input.center);
     var nextAngle = convertAngle(getAngle(endPoint, originPoint));
     var startAngle = convertAngle(getAngle(startPoint, originPoint));
-    return {
-      nextAngle: nextAngle,
-      startAngle: startAngle
-    };
+    var diffAngle = nextAngle - startAngle;
+    var rotation = round(diffAngle <= 0 ? 360 + diffAngle : diffAngle);
+    return rotation;
   }
 
   /**
