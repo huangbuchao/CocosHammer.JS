@@ -10,7 +10,8 @@ var _CocosHammer2 = _interopRequireDefault(_CocosHammer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var PREVSET_EVENTS = ["panstart panmove panend pancancel", "tap", "swipeleft swiperight", "press pressup"];
+var PREVSET_EVENTS = ["panstart panmove panend pancancel", //panleft panright panup pandown
+"tap doubletap quadrupletap", "swipeleft swiperight swipeup swipedown", "press pressup", "rotatestart rotatemove rotateend"];
 var HANDLE_MAP = ["onPan", "onTap", "onSwipe", "onPress", "onRotate"];
 var LABEL_TEXT_MAP = ["pan test", "tap test", "swipe test", "press test", "rotate test"];
 
@@ -32,6 +33,7 @@ cc.Class({
    * @param {customData} data
    */
   convertRecognizer: function convertRecognizer(e, data) {
+    this.resetNode();
     this.updateLabel(LABEL_TEXT_MAP[data]);
     this.refreshRecognizer(parseInt(data));
   },
@@ -69,8 +71,10 @@ cc.Class({
     this.node.parent.getChildByName("manager").getChildByName("label").getComponent(cc.Label).string = str || "";
   },
   resetNode: function resetNode() {
+    this.node.stopAllActions();
     this.node.setPosition(this.initPosition);
     this.node.setScale(1, 1);
+    this.node.rotation = 0;
   },
 
 
@@ -80,23 +84,24 @@ cc.Class({
    */
   onPan: function onPan(e) {
     var eventType = e.type;
-    // if (eventType === "panstart") {
-    //   this.startPoint = this.node.getPosition();
-    // }
-    // this.node.setPosition(
-    //   this.startPoint.x + e.deltaX,
-    //   this.startPoint.y + e.deltaY
-    // );
-    // if (eventType === "panend" || eventType === "pancancel") {
-    //   this.resetNode();
-    // }
-    console.log("rotation", e.rotation);
-    this.node.rotation = e.rotation;
+    if (eventType === "panstart") {
+      this.startPoint = this.node.getPosition();
+    }
+    this.node.setPosition(this.startPoint.x + e.deltaX, this.startPoint.y + e.deltaY);
+    if (eventType === "panend" || eventType === "pancancel") {
+      this.resetNode();
+    }
   },
-  onTap: function onTap() {},
+  onTap: function onTap() {
+    var _this = this;
+
+    var s = 0.9;
+    this.node.runAction(cc.sequence(cc.scaleTo(0.1, s, s), cc.callFunc(function () {
+      _this.node.setScale(1, 1);
+    })));
+  },
   onSwipe: function onSwipe(e) {
-    var eventType = e.type;
-    console.log(e);
+    this.node.runAction(cc.moveBy(0.2, e.deltaX, e.deltaY));
   },
   onPress: function onPress(e) {
     var eventType = e.type;
@@ -106,6 +111,13 @@ cc.Class({
     if (eventType === "pressup") {
       this.node.setScale(1, 1);
     }
+  },
+  onRotate: function onRotate(e) {
+    var eventType = e.type;
+    if (eventType === "rotatestart") {
+      this.initRotation = this.node.rotation;
+    }
+    this.node.rotation = this.initRotation + e.rotation;
   }
 });
 

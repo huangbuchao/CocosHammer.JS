@@ -1,10 +1,11 @@
 import Hammer from "./CocosHammer";
 
 const PREVSET_EVENTS = [
-  "panstart panmove panend pancancel",
-  "tap",
-  "swipeleft swiperight",
-  "press pressup"
+  "panstart panmove panend pancancel", //panleft panright panup pandown
+  "tap doubletap quadrupletap",
+  "swipeleft swiperight swipeup swipedown",
+  "press pressup",
+  "rotatestart rotatemove rotateend"
 ];
 const HANDLE_MAP = ["onPan", "onTap", "onSwipe", "onPress", "onRotate"];
 const LABEL_TEXT_MAP = [
@@ -32,6 +33,7 @@ cc.Class({
    * @param {customData} data
    */
   convertRecognizer(e, data) {
+    this.resetNode();
     this.updateLabel(LABEL_TEXT_MAP[data]);
     this.refreshRecognizer(parseInt(data));
   },
@@ -70,8 +72,10 @@ cc.Class({
   },
 
   resetNode() {
+    this.node.stopAllActions();
     this.node.setPosition(this.initPosition);
     this.node.setScale(1, 1);
+    this.node.rotation = 0;
   },
 
   /**
@@ -80,25 +84,32 @@ cc.Class({
    */
   onPan(e) {
     let eventType = e.type;
-    // if (eventType === "panstart") {
-    //   this.startPoint = this.node.getPosition();
-    // }
-    // this.node.setPosition(
-    //   this.startPoint.x + e.deltaX,
-    //   this.startPoint.y + e.deltaY
-    // );
-    // if (eventType === "panend" || eventType === "pancancel") {
-    //   this.resetNode();
-    // }
-    console.log("rotation", e.rotation);
-    this.node.rotation = e.rotation;
+    if (eventType === "panstart") {
+      this.startPoint = this.node.getPosition();
+    }
+    this.node.setPosition(
+      this.startPoint.x + e.deltaX,
+      this.startPoint.y + e.deltaY
+    );
+    if (eventType === "panend" || eventType === "pancancel") {
+      this.resetNode();
+    }
   },
 
-  onTap() {},
+  onTap() {
+    let s = 0.9;
+    this.node.runAction(
+      cc.sequence(
+        cc.scaleTo(0.1, s, s),
+        cc.callFunc(() => {
+          this.node.setScale(1, 1);
+        })
+      )
+    );
+  },
 
   onSwipe(e) {
-    let eventType = e.type;
-    console.log(e);
+    this.node.runAction(cc.moveBy(0.2, e.deltaX, e.deltaY));
   },
 
   onPress(e) {
@@ -109,5 +120,13 @@ cc.Class({
     if (eventType === "pressup") {
       this.node.setScale(1, 1);
     }
+  },
+
+  onRotate(e) {
+    let eventType = e.type;
+    if (eventType === "rotatestart") {
+      this.initRotation = this.node.rotation;
+    }
+    this.node.rotation = this.initRotation + e.rotation;
   }
 });

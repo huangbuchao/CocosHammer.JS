@@ -496,15 +496,12 @@
     }
 
     // to compute scale and rotation we need to store the multiple touches
-    if (pointersLength > 1 && !session.firstMultiple) {
-      session.firstMultiple = simpleCloneInputData(input);
-    } else if (pointersLength === 1) {
+    if (pointersLength === 1) {
       session.firstMultiple = false;
     }
 
     var firstInput = session.firstInput;
-    var firstMultiple = session.firstMultiple;
-    var offsetCenter = firstMultiple ? firstMultiple.center : firstInput.center;
+    var offsetCenter = firstInput.center;
     var center = (input.center = getCenter(pointers));
     input.timeStamp = now();
     input.deltaTime = input.timeStamp - firstInput.timeStamp;
@@ -527,12 +524,12 @@
         ? overallVelocity.x
         : overallVelocity.y;
 
-    input.scale = firstMultiple
-      ? getScale(firstMultiple.pointers, pointers)
-      : 1;
-    input.rotation = firstMultiple
-      ? getRotation(firstMultiple.pointers, pointers)
-      : getRotationByNodePoints(manager, input);
+    input.scale = 1;
+
+    var angleObj = getRotationByNodePoints(manager, input);
+    var nextAngle = angleObj.nextAngle;
+    var startAngle = angleObj.startAngle;
+    input.rotation = nextAngle - startAngle;
 
     input.maxPointers = !session.prevInput
       ? input.pointers.length
@@ -615,7 +612,7 @@
   }
 
   /**
-   * create a simple clone from the input used for storage of firstInput and firstMultiple
+   * create a simple clone from the input used for storage of firstInput
    * @param {Object} input
    * @returns {Object} clonedInputData
    */
@@ -736,33 +733,6 @@
   }
 
   /**
-   * calculate the rotation degrees between two pointersets
-   * @param {Array} start array of pointers
-   * @param {Array} end array of pointers
-   * @return {Number} rotation
-   */
-  function getRotation(start, end) {
-    return (
-      getAngle(end[1], end[0], PROPS_XY) +
-      getAngle(start[1], start[0], PROPS_XY) //modified clientX -> x
-    );
-  }
-
-  /**
-   * calculate the scale factor between two pointersets
-   * no scale is 1, and goes down to 0 when pinched together, and bigger when pinched out
-   * @param {Array} start array of pointers
-   * @param {Array} end array of pointers
-   * @return {Number} scale
-   */
-  function getScale(start, end) {
-    return (
-      getDistance(end[0], end[1], PROPS_XY) /
-      getDistance(start[0], start[1], PROPS_XY) //modified clientX -> x
-    );
-  }
-
-  /**
    * calculate the rotation degrees when rotate a CC.Node instance
    * @param {cc.p} originPoint node orgin point
    * @param {cc.p} startPoint touch start point
@@ -777,7 +747,10 @@
     var endPoint = manager.element.convertToNodeSpaceAR(input.center);
     const nextAngle = convertAngle(getAngle(endPoint, originPoint));
     const startAngle = convertAngle(getAngle(startPoint, originPoint));
-    return nextAngle - startAngle;
+    return {
+      nextAngle,
+      startAngle
+    };
   }
 
   /**
@@ -1283,44 +1256,6 @@
   });
 
   /**
-   * Pinch
-   * Recognized when two or more pointers are moving toward (zoom-in) or away from each other (zoom-out).
-   * @constructor
-   * @extends AttrRecognizer
-   */
-  function PinchRecognizer() {
-    AttrRecognizer.apply(this, arguments);
-  }
-
-  inherit(PinchRecognizer, AttrRecognizer, {
-    /**
-     * @namespace
-     * @memberof PinchRecognizer
-     */
-    defaults: {
-      event: "pinch",
-      threshold: 0,
-      pointers: 2
-    },
-
-    attrTest: function(input) {
-      return (
-        this._super.attrTest.call(this, input) &&
-        (Math.abs(input.scale - 1) > this.options.threshold ||
-          this.state & STATE_BEGAN)
-      );
-    },
-
-    emit: function(input) {
-      if (input.scale !== 1) {
-        var inOut = input.scale < 1 ? "in" : "out";
-        input.additionalEvent = this.options.event + inOut;
-      }
-      this._super.emit.call(this, input);
-    }
-  });
-
-  /**
    * Press
    * Recognized when the pointer is down for x ms without any movement.
    * @constructor
@@ -1413,7 +1348,7 @@
     defaults: {
       event: "rotate",
       threshold: 0,
-      pointers: 2
+      pointers: 1
     },
 
     attrTest: function(input) {
@@ -1448,10 +1383,6 @@
       pointers: 1
     },
 
-    getTouchAction: function() {
-      return PanRecognizer.prototype.getTouchAction.call(this);
-    },
-
     attrTest: function(input) {
       var direction = this.options.direction;
       var velocity;
@@ -1470,7 +1401,7 @@
         input.distance > this.options.threshold &&
         input.maxPointers == this.options.pointers &&
         abs(velocity) > this.options.velocity &&
-        input.eventType & INPUT_END
+        (input.eventType & INPUT_END || input.eventType & INPUT_CANCEL)
       );
     },
 
@@ -1485,7 +1416,7 @@
   });
 
   /**
-   * A tap is ecognized when the pointer is doing a small tap/click. Multiple taps are recognized if they occur
+   * A tap is recognized when the pointer is doing a small tap/click. Multiple taps are recognized if they occur
    * between the given interval and position. The delay option can be used to recognize multi-taps without firing
    * a single tap.
    *
@@ -1510,7 +1441,7 @@
   inherit(TapRecognizer, Recognizer, {
     /**
      * @namespace
-     * @memberof PinchRecognizer
+     * @memberof TapRecognizer
      */
     defaults: {
       event: "tap",
@@ -1662,12 +1593,12 @@
     preset: [
       // RecognizerClass, options, [recognizeWith, ...], [requireFailure, ...]
       [RotateRecognizer, { enable: true }],
-      [PinchRecognizer, { enable: false }, ["rotate"]],
-      [SwipeRecognizer, { direction: DIRECTION_HORIZONTAL }],
-      [PanRecognizer, { direction: DIRECTION_HORIZONTAL }, ["swipe"]],
-      [TapRecognizer],
-      [TapRecognizer, { event: "doubletap", taps: 2 }, ["tap"]],
-      [PressRecognizer]
+      [SwipeRecognizer, { direction: DIRECTION_ALL }, ["rotate"]],
+      [PanRecognizer, { direction: DIRECTION_ALL }, ["rotate"]],
+      [TapRecognizer, {}, ["rotate"]],
+      [TapRecognizer, { event: "doubletap", taps: 2 }, ["rotate"]],
+      [TapRecognizer, { event: "quadrupletap", taps: 4 }, ["rotate"]],
+      [PressRecognizer, {}, ["rotate"]]
     ]
   };
 
@@ -1916,8 +1847,8 @@
      */
     emit: function(event, data) {
       // no handlers, so skip it all
-      // console.log("eventType: ", event);
-      // console.log("handlers: ", this.handlers);
+      //   console.log("eventType: ", event);
+      //   console.log("handlers: ", this.handlers);
       var handlers = this.handlers[event] && this.handlers[event].slice();
       if (!handlers || !handlers.length) {
         return;
@@ -1977,7 +1908,6 @@
     Tap: TapRecognizer,
     Pan: PanRecognizer,
     Swipe: SwipeRecognizer,
-    Pinch: PinchRecognizer,
     Rotate: RotateRecognizer,
     Press: PressRecognizer,
 
@@ -2007,7 +1937,5 @@
     });
   } else if (typeof module != "undefined" && module.exports) {
     module.exports = Hammer;
-  } else {
-    window[exportName] = Hammer;
   }
 })("Hammer");
