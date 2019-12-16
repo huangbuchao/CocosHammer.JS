@@ -7,5 +7,3 @@ cocosHammer base on Hammer.JS(http://hammerjs.github.io/), use for cocosCreator 
 ```js
 git clone git@github.com:huangbuchao/CocosHammer.JS.git
 ```
-
-open with cocosCreator and run HammerTest Scene in your web browser

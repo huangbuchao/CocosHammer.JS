@@ -1,0 +1,19 @@
+{
+  "name": "cocoshammer.js",
+  "version": "1.0.0",
+  "description": "cocosHammer base on Hammer.JS(http://hammerjs.github.io/), use for cocosCreator games, essentially implement a aspect of gesture events, with it, you can recognize some custom gesture events, for example, 'pan' 'swipe' 'tap'...(see http://hammerjs.github.io/api), you can do something with the listener callback. usage is simple, just new on or emit...manipulate like front end EventTarget's addListener dispatch API.",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huangbuchao/CocosHammer.JS.git"
+  },
+  "author": "huangbuchao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/huangbuchao/CocosHammer.JS/issues"
+  },
+  "homepage": "https://github.com/huangbuchao/CocosHammer.JS#readme"
+}
